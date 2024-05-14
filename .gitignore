@@ -6,6 +6,6 @@ dist
 out
 node_modules
 images/settings
-gitlens-*.vsix
+# gitlens-*.vsix
 tsconfig*.tsbuildinfo
 .DS_Store
