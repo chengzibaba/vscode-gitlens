@@ -252,7 +252,7 @@ export function GraphWrapper({
 	const [branchName, setBranchName] = useState(state.branchName);
 	const [lastFetched, setLastFetched] = useState(state.lastFetched);
 	const [windowFocused, setWindowFocused] = useState(state.windowFocused);
-	const [allowed, setAllowed] = useState(state.allowed ?? false);
+	const [allowed, setAllowed] = useState(true);
 	const [subscription, setSubscription] = useState<Subscription | undefined>(state.subscription);
 	// search state
 	const searchEl = useRef<GlSearchBox>(null);
