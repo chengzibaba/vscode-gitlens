@@ -336,7 +336,7 @@ export function GraphWrapper({
 				setIncludeOnlyRefsById(state.includeOnlyRefs);
 				break;
 			case DidChangeSubscriptionNotification:
-				setAllowed(state.allowed ?? false);
+				setAllowed(true);
 				setSubscription(state.subscription);
 				break;
 			case DidChangeWorkingTreeNotification:
@@ -346,7 +346,7 @@ export function GraphWrapper({
 				setLastFetched(state.lastFetched);
 				break;
 			default: {
-				setAllowed(state.allowed ?? false);
+				setAllowed(true);
 				if (!themingChanged) {
 					setStyleProps(state.theming);
 				}
@@ -1449,7 +1449,7 @@ export function GraphWrapper({
 							enableShowHideRefsOptions
 							enableMultiSelection={graphConfig?.enableMultiSelection}
 							excludeRefsById={excludeRefsById}
-							excludeByType={excludeTypes}
+							excludeByType={{ ...excludeTypes, tags: true }}
 							formatCommitDateTime={getGraphDateFormatter(graphConfig)}
 							getExternalIcon={getIconElementLibrary}
 							graphRows={rows}
