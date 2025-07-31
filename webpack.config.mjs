@@ -150,6 +150,7 @@ function getExtensionConfig(target, mode, env) {
 		new DefinePlugin({
 			DEBUG: mode === 'development',
 		}),
+		/*
 		new ForkTsCheckerPlugin({
 			async: false,
 			formatter: 'basic',
@@ -157,6 +158,7 @@ function getExtensionConfig(target, mode, env) {
 				configFile: tsConfigPath,
 			},
 		}),
+		*/
 	];
 
 	if (!env.skipLint) {
@@ -457,6 +459,7 @@ function getWebviewConfig(webviews, overrides, mode, env) {
 		new DefinePlugin({
 			DEBUG: mode === 'development',
 		}),
+		/*
 		new ForkTsCheckerPlugin({
 			async: false,
 			formatter: 'basic',
@@ -464,6 +467,7 @@ function getWebviewConfig(webviews, overrides, mode, env) {
 				configFile: tsConfigPath,
 			},
 		}),
+		*/
 		new WebpackRequireFromPlugin({
 			variableName: 'webpackResourceBasePath',
 		}),
