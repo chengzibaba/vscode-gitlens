@@ -699,7 +699,7 @@ export class GitProviderService implements Disposable {
 			subscription: { current: await this.getSubscription() },
 			visibility: 'public',
 		};
-
+		/*
 		if (repoPath == null) {
 			let access = this._accessCache.get(feature);
 			if (access == null) {
@@ -719,6 +719,7 @@ export class GitProviderService implements Disposable {
 		}
 
 		return access;
+		*/
 	}
 
 	private async accessCore(feature: PlusFeatures | undefined, repoPath: string | Uri): Promise<RepoFeatureAccess>;
