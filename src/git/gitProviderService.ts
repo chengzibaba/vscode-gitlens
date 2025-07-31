@@ -694,6 +694,12 @@ export class GitProviderService implements Disposable {
 	async access(feature?: PlusFeatures, repoPath?: string | Uri): Promise<FeatureAccess | RepoFeatureAccess>;
 	@debug({ exit: true })
 	async access(feature?: PlusFeatures, repoPath?: string | Uri): Promise<FeatureAccess | RepoFeatureAccess> {
+		return {
+			allowed: true,
+			subscription: { current: await this.getSubscription() },
+			visibility: 'public',
+		};
+
 		if (repoPath == null) {
 			let access = this._accessCache.get(feature);
 			if (access == null) {
